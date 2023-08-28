@@ -7,12 +7,12 @@ using System.Windows;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Novels")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("青衣小说网桌面端")]
+[assembly: AssemblyDescription("青衣小说网(https://gw-novels.zeabur.app/)的桌面端")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Novels")]
-[assembly: AssemblyCopyright("Copyright ©  2023")]
+[assembly: AssemblyCompany("Sunrise Studio")]
+[assembly: AssemblyProduct("青衣小说网桌面端")]
+[assembly: AssemblyCopyright("Copyright ©  2023 Sunrise Studio 青衣小说网")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
