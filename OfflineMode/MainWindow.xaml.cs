@@ -5,7 +5,7 @@ using System;
 using System.Windows;
 using System.IO;
 
-namespace Novels
+namespace OfflineMode
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
@@ -21,9 +21,7 @@ namespace Novels
         readonly string prepareReload = "准备刷新网页";
         readonly string reloadComplete = "成功刷新网页";
         readonly string prepareStartOfflineMode = "准备启动离线模式";
-        readonly string startOfflineModeComplete = "启动离线模式成功";
-        readonly string prepareDownloadOfflinePackage = "准备下载离线包";
-        readonly string downloadOfflinePackageComplete = "下载离线包结束";
+        readonly string startOnlineModeComplete = "启动离线模式成功";
         readonly string startTryingOpenUpdateWebsite = "开始尝试打开更新站";
         readonly string prepareOpenUpdateWebsite = "准备打开更新网址";
         readonly string openUpdateWebsiteComplete = "打开更新网址成功";
@@ -33,8 +31,6 @@ namespace Novels
         readonly string prepareWriteErrorLog = "准备写入错误日志";
         readonly string ErrorLog = "错误日志：";
         readonly string writeErrorLogComplete = "写入错误日志成功";
-        readonly string prepareOpenMessageBox = "准备打开未制作信息框";
-        readonly string openMessageBoxComplete = "打开未制作信息框成功";
         // string xxx = "";
         // Log.Information();
 
@@ -48,7 +44,7 @@ namespace Novels
             Loaded += new RoutedEventHandler(LogRecord);
 
             // 设置窗口标题
-            string qingYiApp = qingYi + " - " + "桌面端" + " - " + "在线版";
+            string qingYiApp = qingYi + " - " + "桌面端" + " - " + "离线版";
             // this.Title = qingYi + "桌面端";
             // this.Title = qingYiApp;
 
@@ -86,7 +82,17 @@ namespace Novels
         private void WebPageLoader_Loaded(object sender, RoutedEventArgs e)
         {
             Log.Information(prepareLoadQingYi);
-            webBrowser.Address = "https://gw-novels.zeabur.app/";
+
+            // 获取当前目录
+            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // 构建 HTML 文件路径
+            string relativePath = @"site\index.html";
+            string htmlFilePath = new Uri(new Uri(currentDirectory), relativePath).LocalPath;
+
+            // 加载 HTML 文件
+            webBrowser.Load(htmlFilePath);
+
             Log.Information(loadQingYiComplete);
             Log.CloseAndFlush();
         }
@@ -94,7 +100,17 @@ namespace Novels
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
             Log.Information(prepareBackQingYiIndex);
-            webBrowser.Address = "https://gw-novels.zeabur.app/";
+
+            // 获取当前目录
+            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
+            // 构建 HTML 文件路径
+            string relativePath = @"site\index.html";
+            string htmlFilePath = new Uri(new Uri(currentDirectory), relativePath).LocalPath;
+
+            // 加载 HTML 文件
+            webBrowser.Load(htmlFilePath);
+
             Log.Information(backQingYiIndexComplete);
             Log.CloseAndFlush();
         }
@@ -107,11 +123,9 @@ namespace Novels
             Log.CloseAndFlush();
         }
 
-        private void OfflineModeBtn_Click(object sender, RoutedEventArgs e)
+        private void OnlineModeBtn_Click(object sender, RoutedEventArgs e)
         {
             Log.Information(prepareStartOfflineMode);
-
-            // NotMaking();
 
             try
             {
@@ -119,7 +133,7 @@ namespace Novels
                 string currentDirectory = Directory.GetCurrentDirectory();
 
                 // 拼接相对路径和文件名
-                string relativePath = @"./OfflineMode.exe";
+                string relativePath = @"./Novels.exe";
                 string exePath = Path.Combine(currentDirectory, relativePath);
 
                 // 创建进程对象
@@ -140,22 +154,14 @@ namespace Novels
                 Log.Information($"{ex.Message}");
             }
 
-            Log.Information(startOfflineModeComplete);
-            Log.CloseAndFlush();
-        }
-
-        private void DownloadOfflinePackageBtn_Click(object sender, RoutedEventArgs e)
-        {
-            Log.Information(prepareDownloadOfflinePackage);
-            NotMaking();
-            Log.Information(downloadOfflinePackageComplete);
+            Log.Information(startOnlineModeComplete);
             Log.CloseAndFlush();
         }
 
         private void CheckUpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             string url = "https://github.com/Grey-Wind/QingYiNovels/releases/latest"; // 要打开的网页地址
-            
+
             Log.Information(startTryingOpenUpdateWebsite);
 
             try
@@ -185,7 +191,7 @@ namespace Novels
                 string filePath = Path.Combine(folderPath, fileName);
 
                 Log.Information(prepareWriteErrorLog);
-                
+
                 // 写入异常消息到文件
                 File.WriteAllText(filePath, errorMessage);
 
@@ -193,19 +199,6 @@ namespace Novels
                 Log.Information(errorMessage);
                 Log.Information(writeErrorLogComplete);
             }
-            Log.CloseAndFlush();
-        }
-
-        private void NotMaking() // 未制作的提示框显示
-        {
-            string title = "注意";
-            string message = "本功能在该版本暂时没有做，可以点击检查更新查看是否有新版本\n如果没有，就是还在做";
-
-            Log.Information(prepareOpenMessageBox);
-            
-            MessageBox.Show(message, title);
-
-            Log.Information(openMessageBoxComplete);
             Log.CloseAndFlush();
         }
     }
