@@ -20,8 +20,8 @@ namespace OfflineMode
         readonly string backQingYiIndexComplete = "成功回到青衣小说网主页";
         readonly string prepareReload = "准备刷新网页";
         readonly string reloadComplete = "成功刷新网页";
-        readonly string prepareStartOfflineMode = "准备启动离线模式";
-        readonly string startOnlineModeComplete = "启动离线模式成功";
+        readonly string prepareStartOfflineMode = "准备启动在线模式";
+        readonly string startOnlineModeComplete = "启动在线模式成功";
         readonly string startTryingOpenUpdateWebsite = "开始尝试打开更新站";
         readonly string prepareOpenUpdateWebsite = "准备打开更新网址";
         readonly string openUpdateWebsiteComplete = "打开更新网址成功";
@@ -83,17 +83,33 @@ namespace OfflineMode
         {
             Log.Information(prepareLoadQingYi);
 
-            // 获取当前目录
-            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string folderPath = "site";  // 相对路径
 
-            // 构建 HTML 文件路径
-            string relativePath = @"site\index.html";
-            string htmlFilePath = new Uri(new Uri(currentDirectory), relativePath).LocalPath;
+            string absolutePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, folderPath);
 
-            // 加载 HTML 文件
-            webBrowser.Load(htmlFilePath);
+            if (Directory.Exists(absolutePath))
+            {
+                // 获取当前目录
+                string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-            Log.Information(loadQingYiComplete);
+                // 构建 HTML 文件路径
+                string relativePath = @"site\index.html";
+                string htmlFilePath = new Uri(new Uri(currentDirectory), relativePath).LocalPath;
+
+                // 加载 HTML 文件
+                webBrowser.Load(htmlFilePath);
+
+                Log.Information(loadQingYiComplete);
+            }
+            else
+            {
+                // Console.WriteLine("文件夹不存在");
+
+                string title = "注意";
+                string message = "你没有安装离线资源包，可以在在线页面点击安装\n离线资源包不包含绝大多数图片，仅有小说内容及基础页面显示";
+                MessageBox.Show(message, title);
+            }
+
             Log.CloseAndFlush();
         }
 
