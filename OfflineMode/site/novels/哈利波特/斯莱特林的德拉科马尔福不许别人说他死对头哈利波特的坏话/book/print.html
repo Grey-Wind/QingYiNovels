@@ -1,0 +1,242 @@
+<!DOCTYPE HTML>
+<html lang="cn" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>斯莱特林的德拉科马尔福不许别人说他死对头哈利波特的坏话</title>
+        <meta name="robots" content="noindex" />
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="介绍.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="正文.html"><strong aria-hidden="true">2.</strong> 正文</a></li><li class="chapter-item expanded "><a href="彩蛋.html"><strong aria-hidden="true">3.</strong> 彩蛋</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">斯莱特林的德拉科马尔福不许别人说他死对头哈利波特的坏话</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="介绍"><a class="header" href="#介绍">介绍</a></h2>
+<!-- 作者：[却是日初道无晴](https://ljyjingyi.lofter.com/) -->
+<p>作者：<a href="../../../../author/%E5%8D%B4%E6%98%AF%E6%97%A5%E5%88%9D%E9%81%93%E6%97%A0%E6%99%B4/">却是日初道无晴</a></p>
+<p>创作时间：2022.3.17</p>
+<p>作品标签：#德哈 #长文章</p>
+<hr />
+<p>简介：</p>
+<p>*图片来源于网络</p>
+<p>*如有雷同，纯属巧合</p>
+<p>*原创！！！</p>
+<p><strong>HEHEHE!</strong></p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="正文"><a class="header" href="#正文">正文</a></h2>
+<p>九月，秋风习习。马尔福看着破特给自己买的小零食，还有一封信。信封上写着：请务必来年开春打开。破特还是那么喜欢吃甜点，马尔福想。可是······好想忘了些什么。作业？写了。答应教授的事情没有做到？也做了啊。嘶······不知道，不管了。</p>
+<p>​    离开休息室，马尔福立即去找破特。他刚想喊他，只见他身边的一个金发女孩挽着他的手，像是女朋友。马尔福这才想起来，救世主今天要宣布他和金妮在一起了。他本来想说一些让救世主讨厌她的话，但是由于觉得无济于事，所以他没有说出口。呵，讽刺，真是讽刺。一个红色的格兰芬多是不可能和绿色的斯莱特林在一起的，红配绿？？根本不可能。放弃吧，Malfoy。这样对我和他而言，都很好。</p>
+<p>​    上魔药课的时候，马尔福一直发挥不好，屡次出现最最最基础的错误。”你今天怎么了，马尔福？怎么一整节课都心不在焉的，到底发生什么了？”斯内普教授关心地问道。“噢，那没什么。只是一些我接受不了的现实而已。”马尔福懒洋洋地回答，那么从容，就像是什么都没有发生过一样，像是在掩饰些什么。“那好吧，”斯内普教授语重心长地说，“那下节课希望我不会看到上课分心的你。如果身体有什么不舒服，尽管和我说，别藏在心里。”</p>
+<p>​    “今天周三，往常一样······”</p>
+<p>​    整整一天，马尔福都没有来找破特的麻烦，破特感觉很不对劲。“他怎么了？”破特四处摸不着头脑。生病了？不，他还来上课呢。失恋了？嗯，倒是有可能。他千想万想都不会想出来马尔福是因为他才那样的。</p>
+<p>​    又是一天。</p>
+<p>​    滴答，滴答，马尔福独自一人在调试着魔药。那种魔药是一种喝下去可以忘记那些不顺心的事的魔药。“呼······终于调试好了。”马尔福长叹一声。忘了他吧，只有忘了他，才不会给他找麻烦。马尔福一口喝完魔药，伴随着“咚！！！”的一声应声倒地。魔药的副作用是需要昏迷一段时间方可清醒。</p>
+<p>翌日。</p>
+<p>​    马尔福完全忘记了那个令他伤心的破特的一切不好。Potter不解，决心去问个究竟。但是他发现马尔福连他对他做了些什么不好的事情都忘了。破特瞬间慌了，手无足措，因为马尔福不应该是这样的啊！于是他请求赫敏的援助。去找赫敏的时候（赫敏和罗恩在外面）正好碰上了潘西。潘西请求他去看看Malfoy，毕竟他最近有些不正常一直都在念叨着哈利。</p>
+<p>​    马尔福在休息室听到有别人说破特的坏话，他站在了那人身后，以绝对的身高优势按了按那人的头，气氛瞬间降至冰点。马尔福那黑压压的气息，直接给那人来了个下马威。“不许你在背后说他坏话！！！“马尔福恶狠狠地盯着那个人。那个人很识趣地立马闭上了嘴。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="彩蛋"><a class="header" href="#彩蛋">彩蛋</a></h2>
+<p><strong>今日论坛：斯莱特林的德拉科马尔福不许别人说他死对头哈利波特的坏话</strong></p>
+<p>蛇院学妹：我就知道！我磕的cp是真的！！！</p>
+<p>罗恩：什么鬼啊，我兄弟不会看上他的！</p>
+<p>赫敏：嘻嘻。（意味深长地一笑）</p>
+<p>邓布利多：年轻真好。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>第3章 自带游戏资料库 - 网游之逆天戒指</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="介绍.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="第1章-神秘之戒.html"><strong aria-hidden="true">2.</strong> 第1章 神秘之戒</a></li><li class="chapter-item expanded "><a href="第2章-初入游戏.html"><strong aria-hidden="true">3.</strong> 第2章 神秘之戒</a></li><li class="chapter-item expanded "><a href="第3章-自带游戏资料库.html" class="active"><strong aria-hidden="true">4.</strong> 第3章 自带游戏资料库</a></li><li class="chapter-item expanded "><a href="第4章-外挂也升级！.html"><strong aria-hidden="true">5.</strong> 第4章 外挂也升级！</a></li><li class="chapter-item expanded "><a href="第5章-超人梦.html"><strong aria-hidden="true">6.</strong> 第5章 超人梦</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">网游之逆天戒指</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="第3章-自带游戏资料库"><a class="header" href="#第3章-自带游戏资料库">第3章 自带游戏资料库</a></h1>
+<p>打算正式开始体验游戏的蒋飞先是查看了一下自身的属性。</p>
+<p>​    姓名：草上飞</p>
+<p>​    等级：0</p>
+<p>​    职业：初心者</p>
+<p>​    辅助职业：无</p>
+<p>​    经验值：0/100</p>
+<p>​    生命值：110/110</p>
+<p>​    魔法值：100/100</p>
+<p>​    物理攻击：10+1</p>
+<p>​    魔法攻击：10</p>
+<p>​    物理防御：5+1</p>
+<p>​    魔法防御：5</p>
+<p>​    力量：10（影响人物物理攻击强弱，人族攻击力成长1。0，初心者职业攻击力成长1。0）</p>
+<p>​    敏捷：10（影响人物攻击速度，移动速度，灵活性，人族敏捷成长1。0，初心者职业敏捷成长1。0）</p>
+<p>​    体质：11影响人物生命值和物理防御力，人族生命成长10，人族防御成长0。5，初心者职业生命成长1。0，初心者职业防御成长1。0）</p>
+<p>​    智力：10（影响人物魔法攻击和魔法防御，人族魔法攻击力成长1。0，人族魔法防御成长1。0，初心者职业魔法攻击成长1。0，初心者职业魔法防御成长1。0）</p>
+<p>​    精神：12（影响人物生命和魔法的恢复速度以及技能熟练度的提升速度，非战斗状态每点精神可以每五秒恢复一点生命值和魔法值，战斗状态，每点精神每五秒可以恢复0。1生命值和魔法值！初心者职业成长无！）</p>
+<p>​    技能：会心一击。</p>
+<p>​    会心一击：立即攻击对手，造成百分之一百二十伤害，并提升暴击率百分之十，持续十秒，冷却五秒。（此技能只限初心者使用，转职后将消失。）</p>
+<p>​    标准的人类新手玩家，身上两件系统附赠的装备，新手木剑和新手布衣，两件装备已经自动穿上了，提升了一点攻击力和一点防御力，效果几乎和没有一样。</p>
+<p>​    新手村里面中规中矩，就算蒋飞比较擅长玩游戏也没找出什么新鲜的东西来，，一共就十二个np，可以接九个任务，就算是其他玩家挨个问一圈也能接全。</p>
+<p>​    “伟大的冒险者啊！你终于来了！我们饭店的食材用光了，你能帮我收集十份鸡肉么？我会给你报酬的！”</p>
+<p>​    “伟大的冒险者啊！你终于来了！我们裁缝铺的毛皮用光了，你能帮我收集十份鹿皮么？我会给你报酬的！”</p>
+<p>​    “伟大的冒险者啊！你终于来了！我们药店的草药用光了，你能帮我收集十份石南草么？我会给你报酬的！”</p>
+<p>​    ……</p>
+<p>​    “哎！看来主要对手还是其他玩家啊！”蒋飞叹了口气，现在新手村的问题不是任务难做，而是人多怪少，几乎刚刷新一个小怪，就有四五个玩家追上去群殴，想要凑齐任务物品可不是简单的事情。</p>
+<p>​    好不容易找到一个没被别人发现的小怪，当蒋飞把目光锁定在这小怪的身上的时候，诡异的事情发生了！</p>
+<p>​    芦花鸡（野兽，普通怪）</p>
+<p>​    等级：1</p>
+<p>​    生命值：50</p>
+<p>​    攻击力：2</p>
+<p>​    技能：无</p>
+<p>​    备注：新手村的初级怪物，危险度极低，涉及任务《收集鸡肉》，发布者：饭店老板！</p>
+<p>​    “卧槽！这是什么情况，这信息也太详细了吧？”蒋飞诧异的看着眼前的提示栏，之前通过其他途径，蒋飞也不是对《曙光》一无所知，根据官方的消息，游戏内是有侦查类技能的，没有这种技能的玩家，只能看到怪物的名字，等级还有血量百分比，其他的信息根本不可能看到！</p>
+<p>​    可是自己不仅能看到这怪的详细信息，甚至连这个怪涉及到什么任务，任务是谁发布的都能看到，这简直就是自带游戏数据库啊！所以蒋飞的目光下意识的就看向了手上那枚神奇的指环！</p>
+<p>​    “嗡！”指环微微散发出一阵银光，仿佛是呼应蒋飞的猜测一样！</p>
+<p>​    “这玩意儿不会是个外挂吧？”蒋飞在心里自言自语的猜测道。</p>
+<p>​    “算了，想不明白就不想了！杀怪升级！”蒋飞是个标准的乐天派，所有想不明白的事情就会抛之脑后！所以他的注意力很快就转移到杀怪升级上了！</p>
+<p>​    “叮！你击杀了芦花鸡，获得经验2点，任务物品鸡肉一份！”在《曙光》中任务物品会自动分配到角色的背包，但是装备或者其他战利品需要玩家自己去拾取，有掉落战利品的怪物尸体会有闪光提示。</p>
+<p>​    不过蒋飞的运气显然没有那么好，这个好不容易抢到的芦花鸡明显不够给力，并没有闪光的迹象，显然没有掉落战利品，不过学习采集技能倒是可以获得一些鸡肉类的材料，这个鸡肉和任务物品的鸡肉是两码事，一个是np需要的任务物品，一个是烹饪职业需要的食材。</p>
+<p>​    好不容易才抢到一只怪物，蒋飞自然不会浪费，当即使用了采集技能，这个技能村长会免费教给玩家。</p>
+<p>​    “叮！你通过采集，获得了美味的鸡肉一份！”</p>
+<p>​    把食材收进背包之后，蒋飞开始了他在《曙光》中的征战生涯！</p>
+<p>​    ……</p>
+<p>​    “叮！恭喜玩家草上飞等级提升到1！所有属性+2！”</p>
+<p>​    随着系统的提示音，蒋飞开心的同时也一撇嘴，早知道这不是梦境的话，自己也不会起这么一个倒霉名字，但是要删号重练的话，需要一周的冷却时间，蒋飞可不想就这么浪费了，所以虽然听名字比较像飞贼，但是也就忍了！</p>
+<p>​    在《曙光》当中，十级以前的属性点是平均分配的，每级一共十个属性点，五项基本属性各加两点，等从十一级开始，十个属性点会分成两部分，其中五点平均分配，五点交给玩家自主分配。</p>
+<p>​    “杀啊！”升级之后动力更足的蒋飞挥着手中的木剑向一旁的野兔杀去……</p>
+<p>​    “叮！你杀死野兔，获得经验值5点，获得任务物品幸运兔爪一个！”</p>
+<p>​    “叮！你通过采集，获得美味兔肉一份！”</p>
+<p>​    ……</p>
+<p>​    很快，两个小时过去了，蒋飞的等级已经提升到了四级，身上的装备也多了一条破损的布甲裤子，让自身的防御再次提升了一点。</p>
+<p>​    此时蒋飞那个系统配发的标准背包早就满了，很多东西都被他移动到了神秘戒指提供的空间之内，只不过这个戒指使用起来很不方便，蒋飞不能直接捡取东西，因为当系统背包满了之后，蒋飞捡取物品的时候会提示背包已满，只能手动的把背包里面的东西转移到戒指当中，再通过背包拾取。</p>
+<p>​    所以为了方便获取任务物品，蒋飞的背包里面只存放了任务物品，其他的食材和卖商店的垃圾都转移到了戒指当中！</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="第2章-初入游戏.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="第4章-外挂也升级！.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="第2章-初入游戏.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="第4章-外挂也升级！.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

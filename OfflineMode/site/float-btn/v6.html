@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* 悬浮按钮样式 */
+    .float-button {
+      position: fixed;
+      top: 70px;
+      left: 20px;
+      width: 60px;
+      height: 60px;
+      background-color: #333;
+      border-radius: 50%;
+      z-index: 9999;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    /* 悬浮按钮箭头样式 */
+    .float-button::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg);
+    }
+    
+    /* 悬浮框样式 */
+    .float-box {
+      position: fixed;
+      top: 80px;
+      left: 90px;
+      width: 240px;
+      height: auto;
+      background-color: #f1f1f1;
+      z-index: 9998;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .float-box.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* 悬浮框内容样式 */
+    .float-box-content {
+      padding: 20px;
+    }
+    
+    /* 链接样式 */
+    .float-link {
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+      text-decoration: none;
+    }
+    
+    .float-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="float-button" onclick="toggleFloatBox()"></div>
+  
+  <div class="float-box" id="floatBox" onmouseleave="hideFloatBox()">
+    <div class="float-box-content" id="commitsContent">
+      
+    </div>
+  </div>
+  
+  <script>
+    let timeoutId;
+
+    function toggleFloatBox() {
+      const floatBox = document.getElementById('floatBox');
+      floatBox.classList.toggle('open');
+
+      clearTimeout(timeoutId);
+      
+      if (floatBox.classList.contains('open')) {
+        // 在此处实时获取并展示最近十条 commits
+        fetchCommits();
+      } else {
+        // 清空 commits 内容
+        document.getElementById('commitsContent').innerHTML = '';
+      }
+      
+      // 设置新的计时器，在鼠标离开按钮或悬浮框2秒后调用 hideFloatBox 函数
+      timeoutId = setTimeout(hideFloatBox, 2000);
+    }
+
+    function fetchCommits() {
+      // 使用合适的方法获取 commits，并将结果展示在 float-box-content 中
+      // 以下仅为示例代码，你需要根据实际情况进行修改
+
+      const url = 'https://api.github.com/repos/Grey-Wind/Novels/commits?per_page=10';
+
+      fetch(url)
+        .then((response) => response.json())
+        .then((data) => {
+          const commitsContent = document.getElementById('commitsContent');
+
+          data.forEach((commit) => {
+            const commitElement = document.createElement('a');
+            commitElement.href = commit.html_url;
+            commitElement.target = "_blank";
+            commitElement.textContent = commit.commit.message;
+            commitElement.classList.add('float-link');
+            commitsContent.appendChild(commitElement);
+          });
+        })
+        .catch((error) => console.log(error));
+    }
+
+    function hideFloatBox() {
+      const floatBox = document.getElementById('floatBox');
+      floatBox.classList.remove('open');
+    }
+  </script>
+</body>
+</html>
