@@ -4,8 +4,10 @@ using System.Diagnostics;
 using System;
 using System.Windows;
 using System.IO;
-using System.Net;
 using System.IO.Compression;
+using System.Threading.Tasks;
+using System.Net;
+using System.Threading;
 
 namespace Novels
 {
@@ -152,43 +154,26 @@ namespace Novels
 
             // NotMaking();
 
-            string fileUrl = "https://hub.ggo.icu/Grey-Wind/Novels/archive/refs/heads/main.zip";  // 下载文件的URL
-            string savePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "site.zip");  // 保存文件的路径
+            string sourceDirectory = Directory.GetCurrentDirectory(); // 获取当前应用程序的工作目录
+            string downloadUrl1 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/index.zip";
+            string downloadUrl2 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/Font.zip";
+            string downloadUrl3 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/author.zip";
+            string downloadUrl4 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/excellent_author.zip";
+            string downloadUrl5 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/float-btn.zip";
+            string downloadUrl6 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/images.zip";
+            string downloadUrl7 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/novels.zip";
+            string downloadUrl8 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/type.zip";
+            string downloadUrl9 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/webfonts.zip";
 
-            using (WebClient webClient = new WebClient())
-            {
-                webClient.DownloadFile(fileUrl, savePath);
-            }
-
-            Directory.Delete(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "site"), true);
-
-            Directory.CreateDirectory(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "site"));
-
-            string zipFilePath = "site.zip";  // ZIP文件的相对路径
-            string extractPath = "site";   // 解压目标文件夹的相对路径
-
-            string absoluteZipFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, zipFilePath);
-            string absoluteExtractPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, extractPath);
-
-            ZipFile.ExtractToDirectory(absoluteZipFilePath, absoluteExtractPath);
-
-            File.Delete(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "site.zip"));
-
-            // 文件位置移动
-            string sourceFolderPath = "site/Novels-main";  // 原始文件夹的相对路径
-            string destinationFolderPath = "site";  // 目标文件夹的相对路径
-
-            string absoluteSourcePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, sourceFolderPath);
-            string absoluteDestinationPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, destinationFolderPath);
-
-            foreach (string filePath in Directory.GetFiles(absoluteSourcePath))
-            {
-                string fileName = Path.GetFileName(filePath);
-                string destinationFilePath = Path.Combine(absoluteDestinationPath, fileName);
-                File.Move(filePath, destinationFilePath);
-            }
-
-            Directory.Delete(absoluteSourcePath, true);
+            DownloadAndExtractFile(sourceDirectory, downloadUrl1, Path.Combine(sourceDirectory, "site"));
+            DownloadAndExtractFile(sourceDirectory, downloadUrl2, Path.Combine(sourceDirectory, "site"));
+            DownloadAndExtractFile(sourceDirectory, downloadUrl3, Path.Combine(sourceDirectory, "site"));
+            DownloadAndExtractFile(sourceDirectory, downloadUrl4, Path.Combine(sourceDirectory, "site"));
+            DownloadAndExtractFile(sourceDirectory, downloadUrl5, Path.Combine(sourceDirectory, "site"));
+            DownloadAndExtractFile(sourceDirectory, downloadUrl6, Path.Combine(sourceDirectory, "site"));
+            DownloadAndExtractFile(sourceDirectory, downloadUrl7, Path.Combine(sourceDirectory, "site"));
+            DownloadAndExtractFile(sourceDirectory, downloadUrl8, Path.Combine(sourceDirectory, "site"));
+            DownloadAndExtractFile(sourceDirectory, downloadUrl9, Path.Combine(sourceDirectory, "site"));
 
             Log.Information(downloadOfflinePackageComplete);
             Log.CloseAndFlush();
@@ -249,6 +234,24 @@ namespace Novels
 
             Log.Information(openMessageBoxComplete);
             Log.CloseAndFlush();
+        }
+
+        static void DownloadAndExtractFile(string sourceDirectory, string downloadUrl, string extractPath)
+        {
+            string fileName = Path.GetFileName(downloadUrl);
+            string filePath = Path.Combine(sourceDirectory, fileName);
+
+            using (var client = new WebClient())
+            {
+                Console.WriteLine($"正在下载文件：{fileName}...");
+                client.DownloadFile(downloadUrl, filePath);
+            }
+
+            Thread.Sleep(TimeSpan.FromMilliseconds(250));
+
+            Console.WriteLine($"正在解压文件：{fileName}...");
+            ZipFile.ExtractToDirectory(filePath, extractPath);
+            File.Delete(filePath);
         }
     }
 }
