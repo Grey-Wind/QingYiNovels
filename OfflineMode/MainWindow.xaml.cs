@@ -108,6 +108,7 @@ namespace OfflineMode
                 string title = "注意";
                 string message = "你没有安装离线资源包，可以在在线页面点击安装\n离线资源包不包含绝大多数图片，仅有小说内容及基础页面显示\n离线包使用GitHub镜像站安装，如果无法正常安装请在GitHub联系作者\n作者会去解决的";
                 MessageBox.Show(message, title);
+                Environment.Exit(0);
             }
 
             Log.CloseAndFlush();
