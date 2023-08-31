@@ -13,3 +13,5 @@
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=serilog&repo=serilog-sinks-file)](https://github.com/serilog/serilog-sinks-file)
 
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=JamesNK&repo=Newtonsoft.Json)](https://github.com/JamesNK/Newtonsoft.Json)
+
