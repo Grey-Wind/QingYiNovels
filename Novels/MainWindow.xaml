@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Novels" xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
-        Title="青衣小说网桌面端 - 在线版" Height="720" Width="1280">
+        Title="青衣小说网 - 桌面端 - 在线版" Height="720" Width="1280">
     <Grid>
         <ToolBar x:Name="ToolBar" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" Width="auto">
             <Button x:Name="BackBtn" Content="回到主页" Click="BackBtn_Click"/>
