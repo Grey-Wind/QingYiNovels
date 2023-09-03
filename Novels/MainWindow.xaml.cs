@@ -85,15 +85,16 @@ namespace Novels
             // NotMaking();
 
             string sourceDirectory = Directory.GetCurrentDirectory(); // 获取当前应用程序的工作目录
-            string downloadUrl1 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/index.zip";
-            string downloadUrl2 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/Font.zip";
-            string downloadUrl3 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/author.zip";
-            string downloadUrl4 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/excellent_author.zip";
-            string downloadUrl5 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/float-btn.zip";
-            string downloadUrl6 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/images.zip";
-            string downloadUrl7 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/novels.zip";
-            string downloadUrl8 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/type.zip";
-            string downloadUrl9 = "https://hub.ggo.icu/Grey-Wind/Novels/raw/main/site/webfonts.zip";
+
+            string downloadUrl1 = "https://gw-novels.zeabur.app/site/index.zip";
+            string downloadUrl2 = "https://gw-novels.zeabur.app/site/Font.zip";
+            string downloadUrl3 = "https://gw-novels.zeabur.app/site/author.zip";
+            string downloadUrl4 = "https://gw-novels.zeabur.app/site/excellent_author.zip";
+            string downloadUrl5 = "https://gw-novels.zeabur.app/site/float-btn.zip";
+            string downloadUrl6 = "https://gw-novels.zeabur.app/site/images.zip";
+            string downloadUrl7 = "https://gw-novels.zeabur.app/site/novels.zip";
+            string downloadUrl8 = "https://gw-novels.zeabur.app/site/type.zip";
+            string downloadUrl9 = "https://gw-novels.zeabur.app/site/webfonts.zip";
 
             DownloadAndExtractFile(sourceDirectory, downloadUrl1, Path.Combine(sourceDirectory, "site"));
             DownloadAndExtractFile(sourceDirectory, downloadUrl2, Path.Combine(sourceDirectory, "site"));
