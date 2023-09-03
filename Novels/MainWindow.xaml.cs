@@ -34,12 +34,12 @@ namespace Novels
 
         private void WebPageLoader_Loaded(object sender, RoutedEventArgs e)
         {
-            webBrowser.Address = "https://gw-novels.zeabur.app/";
+            webBrowser.Address = "https://qingyi-novels.zeabur.app/";
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            webBrowser.Address = "https://gw-novels.zeabur.app/";
+            webBrowser.Address = "https://qingyi-novels.zeabur.app/";
         }
 
         private void ReloadBtn_Click(object sender, RoutedEventArgs e)
@@ -86,15 +86,15 @@ namespace Novels
 
             string sourceDirectory = Directory.GetCurrentDirectory(); // 获取当前应用程序的工作目录
 
-            string downloadUrl1 = "https://gw-novels.zeabur.app/site/index.zip";
-            string downloadUrl2 = "https://gw-novels.zeabur.app/site/Font.zip";
-            string downloadUrl3 = "https://gw-novels.zeabur.app/site/author.zip";
-            string downloadUrl4 = "https://gw-novels.zeabur.app/site/excellent_author.zip";
-            string downloadUrl5 = "https://gw-novels.zeabur.app/site/float-btn.zip";
-            string downloadUrl6 = "https://gw-novels.zeabur.app/site/images.zip";
-            string downloadUrl7 = "https://gw-novels.zeabur.app/site/novels.zip";
-            string downloadUrl8 = "https://gw-novels.zeabur.app/site/type.zip";
-            string downloadUrl9 = "https://gw-novels.zeabur.app/site/webfonts.zip";
+            string downloadUrl1 = "https://qingyi-novels.zeabur.app/site/index.zip";
+            string downloadUrl2 = "https://qingyi-novels.zeabur.app/site/Font.zip";
+            string downloadUrl3 = "https://qingyi-novels.zeabur.app/site/author.zip";
+            string downloadUrl4 = "https://qingyi-novels.zeabur.app/site/excellent_author.zip";
+            string downloadUrl5 = "https://qingyi-novels.zeabur.app/site/float-btn.zip";
+            string downloadUrl6 = "https://qingyi-novels.zeabur.app/site/images.zip";
+            string downloadUrl7 = "https://qingyi-novels.zeabur.app/site/novels.zip";
+            string downloadUrl8 = "https://qingyi-novels.zeabur.app/site/type.zip";
+            string downloadUrl9 = "https://qingyi-novels.zeabur.app/site/webfonts.zip";
 
             DownloadAndExtractFile(sourceDirectory, downloadUrl1, Path.Combine(sourceDirectory, "site"));
             DownloadAndExtractFile(sourceDirectory, downloadUrl2, Path.Combine(sourceDirectory, "site"));
