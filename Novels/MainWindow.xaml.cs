@@ -34,12 +34,14 @@ namespace Novels
 
         private void WebPageLoader_Loaded(object sender, RoutedEventArgs e)
         {
-            webBrowser.Address = "https://qingyi-novels.zeabur.app/";
+            // webBrowser.Address = "https://qingyi-novels.zeabur.app/";
+            setLink();
         }
 
         private void BackBtn_Click(object sender, RoutedEventArgs e)
         {
-            webBrowser.Address = "https://qingyi-novels.zeabur.app/";
+            // webBrowser.Address = "https://qingyi-novels.zeabur.app/";
+            setLink();
         }
 
         private void ReloadBtn_Click(object sender, RoutedEventArgs e)
@@ -186,6 +188,23 @@ namespace Novels
             Console.WriteLine($"正在解压文件：{fileName}...");
             ZipFile.ExtractToDirectory(filePath, extractPath);
             File.Delete(filePath);
+        }
+
+        private void setLink()
+        {
+            var loadPropPath = "load.prop"; // load.prop文件路径
+            var currentDirectory = Directory.GetCurrentDirectory(); // 当前目录路径
+            var loadPropFullPath = Path.Combine(currentDirectory, loadPropPath); // load.prop文件完整路径
+            var url = ""; // 定义一个空字符串变量来保存url属性值
+            foreach (var line in File.ReadAllLines(loadPropPath))
+            {
+                if (line.StartsWith("url="))
+                {
+                    url = line.Substring(4); // 获取url属性值
+                    break; // 找到后立即退出循环
+                }
+            }
+            webBrowser.Address = url;
         }
     }
 }

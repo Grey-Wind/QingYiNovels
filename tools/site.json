@@ -1,0 +1,15 @@
+{
+	"default":{
+		"name":"default",
+		"url":"https://qingyi-novels.zeabur.app/",
+		"link":"qingyi-novels.zeabur.app",
+		"connect":"true"
+	},
+
+	"zeabur":{
+	"name":"zeabur",
+	"url":"https://qingyi-novels.zeabur.app/",
+	"link":"qingyi-novels.zeabur.app",
+	"connect":"true"
+	}
+}
