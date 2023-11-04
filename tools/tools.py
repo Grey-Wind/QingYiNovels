@@ -1,5 +1,5 @@
 import argparse
-from subprogram import updateLog,parameterFree,proxy
+from subprogram import updateLog, parameterFree, proxy
 
 # 创建命令行解析器
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter)

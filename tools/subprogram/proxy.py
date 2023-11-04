@@ -1,4 +1,4 @@
-import json,os,subprocess
+import json, os, subprocess
 import time
 from termcolor import colored
 
