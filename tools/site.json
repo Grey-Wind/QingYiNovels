@@ -11,5 +11,33 @@
 	"url":"https://qingyi-novels.zeabur.app/",
 	"link":"qingyi-novels.zeabur.app",
 	"connect":"true"
+	},
+
+	"vercel":{
+		"name":"vercel",
+		"url":"https://qingyi-novels.vercel.app/",
+		"link":"qingyi-novels.vercel.app",
+		"connect":"true"
+	},
+
+	"github-gw":{
+		"name":"github-gw",
+		"url":"https://grey-wind.github.io/Novels/",
+		"link":"grey-wind.github.io/Novels",
+		"connect":"true"
+	},
+
+	"github-qy":{
+		"name":"github-qy",
+		"url":"https://qingyi-studio.github.io/Novels/",
+		"link":"qingyi-studio.github.io/Novels",
+		"connect":"true"
+	},
+
+	"dev":{
+		"name":"dev",
+		"url":"https://qingyi-novels-dev.zeabur.app/",
+		"link":"qingyi-novels-dev.zeabur.app",
+		"connect":"true"
 	}
 }
