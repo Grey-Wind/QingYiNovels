@@ -1,6 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 
-*.pyx linguist-language=Cython
-*.pyd linguist-language=Python
-*.c linguist-language=Cython
+*.pyx linguist-language=Python
+*.c linguist-language=C
