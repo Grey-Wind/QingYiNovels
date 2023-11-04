@@ -1,6 +1,7 @@
 import argparse
 from lib import updateLog as ul
 from lib import parameterFree as pf
+from lib import package
 from subprogram import proxy
 
 # 创建命令行解析器
@@ -28,6 +29,10 @@ if args.command:
         ul.update_log()
     if args.command == 'proxy':
         proxy.site()
+    if args.command == 'package-install':
+        package.install()
+    if args.command == 'package-uninstall':
+        package.uninstall()
     else:
         print('未知命令:', args.command)
         pf.parameter_free_unknow()

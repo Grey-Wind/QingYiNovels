@@ -4,5 +4,6 @@ from Cython.Build import cythonize
 setup(
     ext_modules=cythonize([
         "parameterFree.pyx",
-        "updateLog.pyx"])
+        "updateLog.pyx",
+        "package.pyx"])
 )
