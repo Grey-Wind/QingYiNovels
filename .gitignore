@@ -5,8 +5,6 @@
 
 #特殊
 /Test
-tools/build
-tools/dist
 
 # User-specific files
 *.rsuser
