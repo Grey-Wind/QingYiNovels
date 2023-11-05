@@ -1,32 +1,28 @@
-import argparse
+"""
+项目的核心代码
+用于判断及调用模块来处理
+处理代码已被拆分
+"""
+import arg_parser as ap
 from lib import updateLog as ul
-from lib import package
+from lib import package as pk
 from subprogram import proxy
 
 # 创建命令行解析器
-parser = argparse.ArgumentParser()
-
-# 创建一个互斥的参数组
-group = parser.add_mutually_exclusive_group(required=True)
-
-# 添加命令行参数
-group.add_argument("update_log", nargs='?', help="显示更新日志")
-group.add_argument("proxy", nargs='?', help="修改启动代理")
-group.add_argument("package-install", nargs='?', help="安装离线包")
-group.add_argument("package-uninstall", nargs='?', help="卸载离线包")
+parser = ap.create_parser()
 
 # 解析命令行参数
 args = parser.parse_args()
 
 # 根据解析结果执行相应操作
 if args.update_log:
-    ul.update_log()
+    ul.update_log() # 显示更新日志
 elif args.proxy:
-    proxy.site()
+    proxy.site() # 修改启动站点
 elif args.package_install:
-    package.install()
+    pk.install() # 安装离线包
 elif args.package_uninstall:
-    package.uninstall()
+    pk.uninstall() # 卸载离线包
 else:
     print('未知命令')
     # 执行无参数操作的代码
