@@ -12,3 +12,5 @@ xcopy /y "load.prop" "Test\""
 
 REM 复制文件夹
 xcopy /s /e /h /y "dist\tools\_internal" "Test\_internal\"
+
+pause

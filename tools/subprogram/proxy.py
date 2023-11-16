@@ -1,5 +1,4 @@
-import json, os, subprocess
-import time
+import json, os, subprocess, time
 from termcolor import colored
 
 def site():

@@ -23,6 +23,8 @@ elif args.package_install:
     pk.install() # 安装离线包
 elif args.package_uninstall:
     pk.uninstall() # 卸载离线包
+elif args.download_config:
+    
 else:
     print('未知命令')
     # 执行无参数操作的代码
