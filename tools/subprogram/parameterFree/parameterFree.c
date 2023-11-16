@@ -5,7 +5,7 @@
     "distutils": {
         "name": "parameterFree",
         "sources": [
-            "parameterFree.pyx"
+            "./parameterFree/parameterFree.pyx"
         ]
     },
     "module_name": "parameterFree"
@@ -1461,7 +1461,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char *__pyx_f[] = {
-  "parameterFree.pyx",
+  "parameterFree\\\\parameterFree.pyx",
 };
 /* #### Code section: utility_code_proto_before_types ### */
 /* ForceInitThreads.proto */
@@ -2032,10 +2032,10 @@ static const char __pyx_k_update_log[] = "update-log       \346\230\276\347\244\
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
 static const char __pyx_k_parameterFree[] = "parameterFree";
 static const char __pyx_k_parameter_free[] = "parameter_free";
-static const char __pyx_k_parameterFree_pyx[] = "parameterFree.pyx";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_parameter_free_unknow[] = "parameter_free_unknow";
+static const char __pyx_k_parameterFree_parameterFree_pyx[] = "parameterFree\\parameterFree.pyx";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_13parameterFree_parameter_free(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_13parameterFree_2parameter_free_unknow(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
@@ -2077,7 +2077,7 @@ typedef struct {
   PyObject *__pyx_n_s_main;
   PyObject *__pyx_n_s_name;
   PyObject *__pyx_n_s_parameterFree;
-  PyObject *__pyx_kp_s_parameterFree_pyx;
+  PyObject *__pyx_kp_s_parameterFree_parameterFree_pyx;
   PyObject *__pyx_n_s_parameter_free;
   PyObject *__pyx_n_s_parameter_free_unknow;
   PyObject *__pyx_n_s_print;
@@ -2139,7 +2139,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
   Py_CLEAR(clear_module_state->__pyx_n_s_name);
   Py_CLEAR(clear_module_state->__pyx_n_s_parameterFree);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_parameterFree_pyx);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_parameterFree_parameterFree_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_parameter_free);
   Py_CLEAR(clear_module_state->__pyx_n_s_parameter_free_unknow);
   Py_CLEAR(clear_module_state->__pyx_n_s_print);
@@ -2179,7 +2179,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
   Py_VISIT(traverse_module_state->__pyx_n_s_name);
   Py_VISIT(traverse_module_state->__pyx_n_s_parameterFree);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_parameterFree_pyx);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_parameterFree_parameterFree_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_parameter_free);
   Py_VISIT(traverse_module_state->__pyx_n_s_parameter_free_unknow);
   Py_VISIT(traverse_module_state->__pyx_n_s_print);
@@ -2229,7 +2229,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
 #define __pyx_n_s_name __pyx_mstate_global->__pyx_n_s_name
 #define __pyx_n_s_parameterFree __pyx_mstate_global->__pyx_n_s_parameterFree
-#define __pyx_kp_s_parameterFree_pyx __pyx_mstate_global->__pyx_kp_s_parameterFree_pyx
+#define __pyx_kp_s_parameterFree_parameterFree_pyx __pyx_mstate_global->__pyx_kp_s_parameterFree_parameterFree_pyx
 #define __pyx_n_s_parameter_free __pyx_mstate_global->__pyx_n_s_parameter_free
 #define __pyx_n_s_parameter_free_unknow __pyx_mstate_global->__pyx_n_s_parameter_free_unknow
 #define __pyx_n_s_print __pyx_mstate_global->__pyx_n_s_print
@@ -2438,7 +2438,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
     {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
     {&__pyx_n_s_parameterFree, __pyx_k_parameterFree, sizeof(__pyx_k_parameterFree), 0, 0, 1, 1},
-    {&__pyx_kp_s_parameterFree_pyx, __pyx_k_parameterFree_pyx, sizeof(__pyx_k_parameterFree_pyx), 0, 0, 1, 0},
+    {&__pyx_kp_s_parameterFree_parameterFree_pyx, __pyx_k_parameterFree_parameterFree_pyx, sizeof(__pyx_k_parameterFree_parameterFree_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_parameter_free, __pyx_k_parameter_free, sizeof(__pyx_k_parameter_free), 0, 0, 1, 1},
     {&__pyx_n_s_parameter_free_unknow, __pyx_k_parameter_free_unknow, sizeof(__pyx_k_parameter_free_unknow), 0, 0, 1, 1},
     {&__pyx_n_s_print, __pyx_k_print, sizeof(__pyx_k_print), 0, 0, 1, 1},
@@ -2497,7 +2497,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     print("")
  *     print("update-log       ")
  */
-  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_parameterFree_pyx, __pyx_n_s_parameter_free, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_codeobj__6 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_parameterFree_parameterFree_pyx, __pyx_n_s_parameter_free, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__6)) __PYX_ERR(0, 1, __pyx_L1_error)
 
   /* "parameterFree.pyx":5
  *     print("update-log       ")
@@ -2506,7 +2506,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     print("")
  *     parameter_free()
  */
-  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_parameterFree_pyx, __pyx_n_s_parameter_free_unknow, 5, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 5, __pyx_L1_error)
+  __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_parameterFree_parameterFree_pyx, __pyx_n_s_parameter_free_unknow, 5, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 5, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;

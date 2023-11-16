@@ -5,7 +5,7 @@
     "distutils": {
         "name": "package",
         "sources": [
-            "package.pyx"
+            "./package/package.pyx"
         ]
     },
     "module_name": "package"
@@ -1461,7 +1461,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char *__pyx_f[] = {
-  "package.pyx",
+  "package\\\\package.pyx",
 };
 /* #### Code section: utility_code_proto_before_types ### */
 /* ForceInitThreads.proto */
@@ -2043,11 +2043,11 @@ static const char __pyx_k_package[] = "package";
 static const char __pyx_k_uop_exe[] = "./uop.exe";
 static const char __pyx_k_uninstall[] = "uninstall";
 static const char __pyx_k_subprocess[] = "subprocess";
-static const char __pyx_k_package_pyx[] = "package.pyx";
 static const char __pyx_k_initializing[] = "_initializing";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static const char __pyx_k_package_package_pyx[] = "package\\package.pyx";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_7package_install(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_7package_2uninstall(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
@@ -2092,7 +2092,7 @@ typedef struct {
   PyObject *__pyx_n_s_main;
   PyObject *__pyx_n_s_name;
   PyObject *__pyx_n_s_package;
-  PyObject *__pyx_kp_s_package_pyx;
+  PyObject *__pyx_kp_s_package_package_pyx;
   PyObject *__pyx_n_s_run;
   PyObject *__pyx_n_s_spec;
   PyObject *__pyx_n_s_subprocess;
@@ -2155,7 +2155,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
   Py_CLEAR(clear_module_state->__pyx_n_s_name);
   Py_CLEAR(clear_module_state->__pyx_n_s_package);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_package_pyx);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_package_package_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_run);
   Py_CLEAR(clear_module_state->__pyx_n_s_spec);
   Py_CLEAR(clear_module_state->__pyx_n_s_subprocess);
@@ -2196,7 +2196,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
   Py_VISIT(traverse_module_state->__pyx_n_s_name);
   Py_VISIT(traverse_module_state->__pyx_n_s_package);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_package_pyx);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_package_package_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_run);
   Py_VISIT(traverse_module_state->__pyx_n_s_spec);
   Py_VISIT(traverse_module_state->__pyx_n_s_subprocess);
@@ -2247,7 +2247,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
 #define __pyx_n_s_name __pyx_mstate_global->__pyx_n_s_name
 #define __pyx_n_s_package __pyx_mstate_global->__pyx_n_s_package
-#define __pyx_kp_s_package_pyx __pyx_mstate_global->__pyx_kp_s_package_pyx
+#define __pyx_kp_s_package_package_pyx __pyx_mstate_global->__pyx_kp_s_package_package_pyx
 #define __pyx_n_s_run __pyx_mstate_global->__pyx_n_s_run
 #define __pyx_n_s_spec __pyx_mstate_global->__pyx_n_s_spec
 #define __pyx_n_s_subprocess __pyx_mstate_global->__pyx_n_s_subprocess
@@ -2472,7 +2472,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
     {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
     {&__pyx_n_s_package, __pyx_k_package, sizeof(__pyx_k_package), 0, 0, 1, 1},
-    {&__pyx_kp_s_package_pyx, __pyx_k_package_pyx, sizeof(__pyx_k_package_pyx), 0, 0, 1, 0},
+    {&__pyx_kp_s_package_package_pyx, __pyx_k_package_package_pyx, sizeof(__pyx_k_package_package_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_run, __pyx_k_run, sizeof(__pyx_k_run), 0, 0, 1, 1},
     {&__pyx_n_s_spec, __pyx_k_spec, sizeof(__pyx_k_spec), 0, 0, 1, 1},
     {&__pyx_n_s_subprocess, __pyx_k_subprocess, sizeof(__pyx_k_subprocess), 0, 0, 1, 1},
@@ -2500,7 +2500,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     subprocess.run("./iop.exe")
  * 
  */
-  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_package_pyx, __pyx_n_s_install, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 3, __pyx_L1_error)
+  __pyx_codeobj__2 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_package_package_pyx, __pyx_n_s_install, 3, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__2)) __PYX_ERR(0, 3, __pyx_L1_error)
 
   /* "package.pyx":6
  *     subprocess.run("./iop.exe")
@@ -2508,7 +2508,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def uninstall():             # <<<<<<<<<<<<<<
  *     subprocess.run("./uop.exe")
  */
-  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_package_pyx, __pyx_n_s_uninstall, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 6, __pyx_L1_error)
+  __pyx_codeobj__3 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_package_package_pyx, __pyx_n_s_uninstall, 6, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__3)) __PYX_ERR(0, 6, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;

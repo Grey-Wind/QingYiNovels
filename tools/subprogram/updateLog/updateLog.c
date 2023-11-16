@@ -5,7 +5,7 @@
     "distutils": {
         "name": "updateLog",
         "sources": [
-            "updateLog.pyx"
+            "./updateLog/updateLog.pyx"
         ]
     },
     "module_name": "updateLog"
@@ -1461,7 +1461,7 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char *__pyx_f[] = {
-  "updateLog.pyx",
+  "updateLog\\\\updateLog.pyx",
 };
 /* #### Code section: utility_code_proto_before_types ### */
 /* ForceInitThreads.proto */
@@ -2060,10 +2060,10 @@ static const char __pyx_k_encoding[] = "encoding";
 static const char __pyx_k_updateLog[] = "updateLog";
 static const char __pyx_k_update_log[] = "update_log";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
-static const char __pyx_k_updateLog_pyx[] = "updateLog.pyx";
 static const char __pyx_k_update_log_txt[] = "update-log.txt";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static const char __pyx_k_updateLog_updateLog_pyx[] = "updateLog\\updateLog.pyx";
 /* #### Code section: decls ### */
 static PyObject *__pyx_pf_9updateLog_update_log(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 /* #### Code section: late_includes ### */
@@ -2113,7 +2113,7 @@ typedef struct {
   PyObject *__pyx_n_s_read;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_updateLog;
-  PyObject *__pyx_kp_s_updateLog_pyx;
+  PyObject *__pyx_kp_s_updateLog_updateLog_pyx;
   PyObject *__pyx_n_s_update_log;
   PyObject *__pyx_kp_s_update_log_txt;
   PyObject *__pyx_kp_s_utf_8;
@@ -2181,7 +2181,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_read);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_updateLog);
-  Py_CLEAR(clear_module_state->__pyx_kp_s_updateLog_pyx);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_updateLog_updateLog_pyx);
   Py_CLEAR(clear_module_state->__pyx_n_s_update_log);
   Py_CLEAR(clear_module_state->__pyx_kp_s_update_log_txt);
   Py_CLEAR(clear_module_state->__pyx_kp_s_utf_8);
@@ -2227,7 +2227,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_read);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_updateLog);
-  Py_VISIT(traverse_module_state->__pyx_kp_s_updateLog_pyx);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_updateLog_updateLog_pyx);
   Py_VISIT(traverse_module_state->__pyx_n_s_update_log);
   Py_VISIT(traverse_module_state->__pyx_kp_s_update_log_txt);
   Py_VISIT(traverse_module_state->__pyx_kp_s_utf_8);
@@ -2283,7 +2283,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_read __pyx_mstate_global->__pyx_n_s_read
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_updateLog __pyx_mstate_global->__pyx_n_s_updateLog
-#define __pyx_kp_s_updateLog_pyx __pyx_mstate_global->__pyx_kp_s_updateLog_pyx
+#define __pyx_kp_s_updateLog_updateLog_pyx __pyx_mstate_global->__pyx_kp_s_updateLog_updateLog_pyx
 #define __pyx_n_s_update_log __pyx_mstate_global->__pyx_n_s_update_log
 #define __pyx_kp_s_update_log_txt __pyx_mstate_global->__pyx_kp_s_update_log_txt
 #define __pyx_kp_s_utf_8 __pyx_mstate_global->__pyx_kp_s_utf_8
@@ -2582,7 +2582,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_read, __pyx_k_read, sizeof(__pyx_k_read), 0, 0, 1, 1},
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_n_s_updateLog, __pyx_k_updateLog, sizeof(__pyx_k_updateLog), 0, 0, 1, 1},
-    {&__pyx_kp_s_updateLog_pyx, __pyx_k_updateLog_pyx, sizeof(__pyx_k_updateLog_pyx), 0, 0, 1, 0},
+    {&__pyx_kp_s_updateLog_updateLog_pyx, __pyx_k_updateLog_updateLog_pyx, sizeof(__pyx_k_updateLog_updateLog_pyx), 0, 0, 1, 0},
     {&__pyx_n_s_update_log, __pyx_k_update_log, sizeof(__pyx_k_update_log), 0, 0, 1, 1},
     {&__pyx_kp_s_update_log_txt, __pyx_k_update_log_txt, sizeof(__pyx_k_update_log_txt), 0, 0, 1, 0},
     {&__pyx_kp_s_utf_8, __pyx_k_utf_8, sizeof(__pyx_k_utf_8), 0, 0, 1, 0},
@@ -2626,7 +2626,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__3 = PyTuple_Pack(2, __pyx_n_s_file, __pyx_n_s_content); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__3);
   __Pyx_GIVEREF(__pyx_tuple__3);
-  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_updateLog_pyx, __pyx_n_s_update_log, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_codeobj__4 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__3, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_updateLog_updateLog_pyx, __pyx_n_s_update_log, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__4)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
