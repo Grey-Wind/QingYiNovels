@@ -16,10 +16,10 @@ def create_parser():
     group = parser.add_mutually_exclusive_group(required=True)
 
     # 添加命令行参数
-    group.add_argument("--update_log", nargs='?', action="store_true", help="显示更新日志")
-    group.add_argument("--proxy", nargs='?', action="store_true", help="修改启动代理")
-    group.add_argument("--package_install", nargs='?', action="store_true", help="安装离线包")
-    group.add_argument("--package_uninstall", nargs='?', action="store_true", help="卸载离线包")
-    group.add_argument("--download_config", nargs='?', action="store_true", help="下载原始配置文件")
+    group.add_argument("--update_log", action="store_true", help="显示更新日志")
+    group.add_argument("--proxy", action="store_true", help="修改启动代理")
+    group.add_argument("--package_install", action="store_true", help="安装离线包")
+    group.add_argument("--package_uninstall", action="store_true", help="卸载离线包")
+    group.add_argument("--download_config", action="store_true", help="下载原始配置文件")
 
     return parser

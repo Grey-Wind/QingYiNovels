@@ -3,6 +3,7 @@
 用于判断及调用模块来处理
 处理代码已被拆分
 """
+import ctypes
 import arg_parser as ap
 from lib import updateLog as ul
 from lib import package as pk
@@ -24,7 +25,9 @@ elif args.package_install:
 elif args.package_uninstall:
     pk.uninstall() # 卸载离线包
 elif args.download_config:
-    
+    # 加载动态链接库
+    dc = ctypes.CDLL('./download_config.dll')
+    dc.main()
 else:
     print('未知命令')
     # 执行无参数操作的代码
